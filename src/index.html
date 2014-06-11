@@ -1,0 +1,41 @@
+<html ng-app='app'>
+<head>
+  <meta charset='utf-8'>
+  <link rel="stylesheet" href="css/bootstrap-darkly.css">
+  <link rel="stylesheet" href="css/personalizado.css">
+
+  <script src='js/angular.js'></script>
+  <script src='js/app.js'></script>
+
+</head>
+<body ng-controller='AppCtrl'>
+  <div class="col-lg-12">
+
+    <div ng-show='data.ejecutando' class='indicador-ejecucion'>
+      Juego en ejecución ...
+    </div>
+
+    <div class="page-header">
+      <h1 id="container">indiebox</h1>
+      <p class='nota'>Un conjunto de juegos únicos...</p>
+    </div>
+
+    <div class="bs-component">
+      <div class="jumbotron center">
+
+        <div ng-hide='data.juegos.length > 0' class='alert'>
+          <p>Epa!, no hay juegos aún. Grabalos en el directorio <code>juegos</code>.</p>
+        </div>
+
+        <ul class='juegos' ng-show='data.juegos.length > 0'>
+          <li class='juego' ng-repeat='juego in data.juegos'>
+            <a href ng-click='ejecutar(juego.nombre)'> <img ng-src='juegos/{{juego.nombre}}/preview.jpg'></a>
+            <div class='titulo'>{{juego.nombre}}</div>
+        </ul>
+
+      </div>
+    </div>
+
+    <div class='footer'>;)</div>
+</body>
+</html>
