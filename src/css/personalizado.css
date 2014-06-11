@@ -18,6 +18,10 @@ li.juego {
   padding: 5px;
 }
 
+li.juego img {
+  width: 100%;
+}
+
 div.indicador-ejecucion {
   position: absolute;
   opacity: 0.5;
